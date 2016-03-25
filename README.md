@@ -32,7 +32,7 @@ _The project was put together using Angular2 typescript gulp npm nodejs bower ._
 
 * Gulp is used to handle both building the site and launching a server to host the site...
 
-
+    gulp build
     gulp serve
 
 ## Known Bugs

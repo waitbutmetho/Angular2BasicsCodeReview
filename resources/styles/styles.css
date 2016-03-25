@@ -3,7 +3,9 @@ h1 {
 }
 
 .selected{
-  color: blue;
+  text-shadow: 1px 1px 2px black, 0 0 1em gold, 0 0 0.2em gold;
+    color: white;
+    font: 1.3em Georgia, serif;
 }
 
 .editMealDiv {

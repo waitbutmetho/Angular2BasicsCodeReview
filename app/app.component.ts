@@ -2,7 +2,6 @@ import { Component, EventEmitter } from 'angular2/core';
 import { MealListComponent         } from './meal-list.component';
 import { Meal                      } from './meal.model';
 
-// defining annotation aka "decorator"
 @Component({
   selector: 'my-app',
   directives: [ MealListComponent ],
