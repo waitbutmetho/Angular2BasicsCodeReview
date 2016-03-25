@@ -2,17 +2,10 @@ h1 {
   color: grey;
 }
 
-.myHide{
-  visibility: hidden;
-}
-
 .selected{
   color: blue;
 }
-/*.selected > *{
-  visibility: visible;
-}*/
 
-.marginBottom {
-  margin-bottom: 30px;
+.editMealDiv {
+  margin-bottom: 100px;
 }

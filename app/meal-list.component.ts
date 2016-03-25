@@ -12,9 +12,11 @@ import { CaloriesPipe } from './calories.pipe';
   pipes: [CaloriesPipe],
   directives: [DisplayMealComponent, NewMealComponent, EditMealComponent],
   template:`
-  <select (change)="onChange($event.target.value)" class="filter">
-    <option *ngFor="#currentMeal of mealList" value="{{currentMeal.calories}}">{{currentMeal.calories}}</option>
-  </select>
+  <select (change)="onChange($event.target.value)">View:
+			<option value="302">higher calorie items</option>
+			<option value="1">low calorie items</option>
+			<option value="-1" selected="selected">all</option>
+		</select>
   <meal-display *ngFor="#currentMeal of mealList | calories:caloriesFilter"
     (click)="mealClicked(currentMeal)"
     [class.selected]="currentMeal === selectedMeal"
@@ -33,7 +35,7 @@ export class MealListComponent {
   public mealList: Meal[];
   public onMealSelect: EventEmitter<Meal>
   public selectedMeal: Meal;
-  public caloriesFilter: number = 0;
+  public caloriesFilter: number = -1;
   constructor() {
     this.onMealSelect = new EventEmitter();
   }

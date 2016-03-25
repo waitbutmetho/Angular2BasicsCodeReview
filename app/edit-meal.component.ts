@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'edit-meal',
   inputs: ['meal'],
   template: `
-  <div class="marginBottom">
+  <div class="editMealDiv">
     <h3>Edit Meal:</h3>
     <input value="{{ meal.name }}" class="col-sm-8 input-lg" #newName>
     <input value="{{ meal.details}}" class="col-sm-8 input-lg" #newDetails>

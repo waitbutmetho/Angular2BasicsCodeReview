@@ -7,13 +7,18 @@ import { Meal                } from './meal.model';
 })
 export class CaloriesPipe implements PipeTransform {
   transform(input: Meal[], args) {
-    var desiredCaloriesState = args[0];
-    if(desiredCaloriesState === 0) {
-      return input;
-    } else {
+    var desiredCaloriesState  =  parseInt(args[0]);
+    if(desiredCaloriesState > 300) {
       return input.filter((meal) => {
-        return (meal.calories === args[0]);
+        return meal.calories > 300;
       });
+    } else if(desiredCaloriesState < 300 && desiredCaloriesState > 0) {
+      return input.filter((meal) => {
+        return meal.calories < 300;
+      })
+    } else {
+      return input;
     }
+
   }
 }
