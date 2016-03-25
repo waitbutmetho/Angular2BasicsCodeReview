@@ -3,7 +3,7 @@ import { DisplayMealComponent } from './meal-display.component';
 import { Meal } from './meal.model';
 import { NewMealComponent } from './new-meal.component';
 import { EditMealComponent } from './edit-meal.component';
-import { CaloriesPipe } from './calorie.pipe';
+import { CaloriesPipe } from './calories.pipe';
 
 @Component({
   selector: 'meal-list',
@@ -20,20 +20,20 @@ import { CaloriesPipe } from './calorie.pipe';
     [class.selected]="currentMeal === selectedMeal"
     [meal]="currentMeal">
   </meal-display>
+  <edit-meal
+  *ngIf="selectedMeal"
+  [meal]="selectedMeal"
+  >
+  </edit-meal>
   <new-meal (onSubmitNewMeal)="createMeal($event)">
   </new-meal><br>
-  <edit-meal
-    *ngIf="selectedMeal"
-    [meal]="selectedMeal"
-    >
-  </edit-meal>
   `
 })
 export class MealListComponent {
   public mealList: Meal[];
   public onMealSelect: EventEmitter<Meal>
   public selectedMeal: Meal;
-  public caloriesFilter: string = 'none';
+  public caloriesFilter: number = 0;
   constructor() {
     this.onMealSelect = new EventEmitter();
   }
