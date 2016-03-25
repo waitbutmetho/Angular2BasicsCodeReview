@@ -6,6 +6,8 @@
 
 ## Description
 
+_This web app is designed so that one can add a meal with name details and calories. Views only names of meals in list. One can also filter the list to see based on calorie amount. When click on name in list edit form appears for easy viewing of details and calories along with easy editing._
+
 _This web app is designed for practice and also to meet objectives of code review._
 
 _The goal of this project is for practice and also to meet objectives of code review._
